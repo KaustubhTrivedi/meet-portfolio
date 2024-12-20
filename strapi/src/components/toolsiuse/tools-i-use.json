@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_toolsiuse_tools_i_uses",
+  "info": {
+    "displayName": "Tools I use",
+    "icon": "paint"
+  },
+  "options": {},
+  "attributes": {
+    "tool_icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

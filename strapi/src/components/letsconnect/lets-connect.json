@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_letsconnect_lets_connects",
+  "info": {
+    "displayName": "Lets Connect",
+    "icon": "wheelchair"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

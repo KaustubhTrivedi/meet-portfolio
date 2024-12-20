@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_exploremywork_explore_my_works",
+  "info": {
+    "displayName": "Explore my work",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "tag": {
+      "type": "enumeration",
+      "enum": [
+        "UI/UX",
+        "Interface Design",
+        "Product design",
+        "UX Research"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cta_link": {
+      "type": "string"
+    }
+  }
+}

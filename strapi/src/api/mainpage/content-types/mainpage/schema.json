@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mainpages",
+  "info": {
+    "singularName": "mainpage",
+    "pluralName": "mainpages",
+    "displayName": "mainpage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "string"
+    },
+    "whoami": {
+      "type": "string"
+    },
+    "display_picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "know_more_about_me_cta": {
+      "type": "string"
+    },
+    "exploremywork": {
+      "type": "component",
+      "repeatable": true,
+      "component": "exploremywork.explore-my-work"
+    },
+    "toolsiuse": {
+      "type": "component",
+      "repeatable": true,
+      "component": "toolsiuse.tools-i-use"
+    },
+    "skills": {
+      "displayName": "Skills",
+      "type": "component",
+      "repeatable": true,
+      "component": "skills.skills"
+    },
+    "lets_connect": {
+      "type": "component",
+      "repeatable": true,
+      "component": "letsconnect.lets-connect"
+    }
+  }
+}

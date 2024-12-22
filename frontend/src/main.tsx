@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./page/App.tsx";
 import About from "./page/About.tsx";
 import Navbar from "./components/global/Navbar.tsx";
+import Projects from "./page/Projects.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -13,7 +14,7 @@ createRoot(document.getElementById("root")!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
-        <Route path="/project" element={<div>404</div>} />
+        <Route path="/project" element={<Projects />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

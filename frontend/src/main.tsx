@@ -8,12 +8,12 @@ import Navbar from "./components/global/Navbar.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Navbar />
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
-        <Route path="*" element={<div>404</div>} />
+        <Route path="/project" element={<div>404</div>} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

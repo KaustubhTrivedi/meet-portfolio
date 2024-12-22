@@ -1,4 +1,4 @@
 const Projects = () => {
-  return <div>Does a wrong branch name work?</div>;
+  return <div>Creating a new PR</div>;
 };
 export default Projects;

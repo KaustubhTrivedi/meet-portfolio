@@ -42,4 +42,4 @@ jobs:
 
       - name: Build Docker image for amd64
         run: |
-          docker buildx build --platform linux/amd64 -t frontend-test-image ./Frontend
+          docker buildx build --platform linux/amd64 -t frontend-test-image ./frontend

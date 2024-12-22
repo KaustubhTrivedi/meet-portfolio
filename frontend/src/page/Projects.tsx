@@ -1,4 +1,4 @@
 const Projects = () => {
-  return <div>Does branch protection settings work?</div>;
+  return <div>Something different</div>;
 };
 export default Projects;

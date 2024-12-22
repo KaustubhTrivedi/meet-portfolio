@@ -1,4 +1,4 @@
 const Projects = () => {
-  return <div>Tis one is for checking the PR template</div>;
+  return <div>Creating a new PR</div>;
 };
 export default Projects;

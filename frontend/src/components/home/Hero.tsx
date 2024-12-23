@@ -50,7 +50,7 @@ const Hero = () => {
                    tracking-wide bg-gradient-to-r from-white to-gray-400 
                    bg-clip-text text-transparent"
       >
-        Welcome to my websit, temp change
+        Welcome to my websit, new change
       </motion.h1>
     </motion.div>
   );

@@ -87,7 +87,7 @@ const Cursor: React.FC<CursorProps> = ({ position }) => {
       animate={{
         ...position,
       }}
-      className="absolute z-0 h-7 rounded-full bg-[#CFEF00] text-black font-semibold md:h-12"
+      className="absolute z-0 h-7 rounded-full bg-[#CFEF00] hover:shadow-lg hover:shadow-[#CFEF00] text-black font-semibold md:h-12"
     />
   );
 };

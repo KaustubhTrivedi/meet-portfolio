@@ -9,13 +9,15 @@ import Projects from "./page/Projects.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/project" element={<Projects />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="bg-gradient-to-r from-black to-gray-700 h-screen">
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/project" element={<Projects />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   </StrictMode>
 );

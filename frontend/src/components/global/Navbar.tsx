@@ -1,19 +1,22 @@
-import { NavLink } from "react-router";
+import { SlideTabsNav } from "../Navbar/Tabs";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto py-5 ">
       <div
-        className="flex justify-between items-center h-16 bg-white text-black relative"
+        className="flex justify-between items-center h-16  relative text-white"
         role="navigation"
       >
         <div>Logo</div>
-        <div className="flex space-x-4">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to={"/project"}>Projects</NavLink>
-          <NavLink to={"/about"}>About Me</NavLink>
+        <div className="">
+          <SlideTabsNav />
         </div>
-        <div>CTA</div>
+        <div>
+          <Button className="rounded-full bg-[#CFEF00] text-black font-semibold hover:bg-[#b9d600]">
+            Let's Connect
+          </Button>
+        </div>
       </div>
     </div>
   );

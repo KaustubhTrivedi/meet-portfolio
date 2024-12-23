@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router";
 
 export const SlideTabsNav = () => {
   return (
@@ -26,9 +27,15 @@ const SlideTabs = () => {
       }}
       className="relative mx-auto flex w-fit rounded-full border-2  p-1"
     >
-      <Tab setPosition={setPosition}>Home</Tab>
-      <Tab setPosition={setPosition}>Pricing</Tab>
-      <Tab setPosition={setPosition}>Features</Tab>
+      <Tab setPosition={setPosition}>
+        <NavLink to="/">Home</NavLink>
+      </Tab>
+      <Tab setPosition={setPosition}>
+        <NavLink to={"/projects"}>Projects</NavLink>
+      </Tab>
+      <Tab setPosition={setPosition}>
+        <NavLink to={"/about"}>About Me</NavLink>
+      </Tab>
 
       <Cursor position={position} />
     </ul>

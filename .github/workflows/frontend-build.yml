@@ -44,10 +44,15 @@ jobs:
           VERSION=$(jq -r '.version' frontend/package.json | tr -d '\n' | tr -d '\r')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
-      - name: Push Docker image to GitHub Container Registry
+      - name: Build Docker image
         run: |
-          docker buildx build --platform linux/amd64 \
-            -t ghcr.io/kaustubhtrivedi/meet-portfolio:latest \
-            -t ghcr.io/kaustubhtrivedi/meet-portfolio:${{ env.VERSION }} \
-            --push \
-            ./frontend
+          REPO_NAME=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
+          USERNAME=$(echo ${{ github.actor }} | tr '[:upper:]' '[:lower:]')
+          docker build -t ghcr.io/${REPO_NAME}:${VERSION} -t ghcr.io/${REPO_NAME}:latest .
+
+      - name: Push Docker image
+        run: |
+          REPO_NAME=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
+          USERNAME=$(echo ${{ github.actor }} | tr '[:upper:]' '[:lower:]')
+           docker push ghcr.io/${REPO_NAME}:${VERSION}
+           docker push ghcr.io/${REPO_NAME}:latest

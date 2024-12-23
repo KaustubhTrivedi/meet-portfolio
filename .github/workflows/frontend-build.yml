@@ -47,7 +47,7 @@ jobs:
       - name: Push Docker image to GitHub Container Registry
         run: |
           docker buildx build --platform linux/amd64 \
-            -t ghcr.io/kaustubhtrivedi/meet-portfolio/frontend:latest \
-            -t ghcr.io/kaustubhtrivedi/meet-portfolio/frontend:${{ env.VERSION }} \
+            -t ghcr.io/kaustubhtrivedi/meet-portfolio:latest \
+            -t ghcr.io/kaustubhtrivedi/meet-portfolio:${{ env.VERSION }} \
             --push \
             ./frontend

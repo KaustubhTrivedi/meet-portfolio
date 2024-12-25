@@ -4,7 +4,7 @@ import "../App.css";
 function App() {
   return (
     <>
-      <div className="">
+      <div className="text-white">
         <Hero />
         Testing Deployment...
       </div>

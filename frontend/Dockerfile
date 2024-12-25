@@ -1,5 +1,5 @@
 # Step 1: Use an official Node.js image to build the app
-FROM node:18 AS build
+FROM node:20 AS build
 
 # Step 2: Set the working directory for the application
 WORKDIR /app
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Step 7: Expose the port where the app will be served
-EXPOSE 5173
+EXPOSE 3000
 
 # Step 8: Run the Vite dev server in production mode (optional, can be swapped with another server)
 CMD ["npm", "run", "preview"]

@@ -10,6 +10,8 @@ COPY package*.json ./
 # Step 4: Install the dependencies
 RUN npm install
 
+RUN npm i -g serve
+
 # Step 5: Copy the entire application code to the container
 COPY . .
 
@@ -20,4 +22,4 @@ RUN npm run build
 EXPOSE 3000
 
 # Step 8: Run the Vite dev server in production mode (optional, can be swapped with another server)
-CMD ["npm", "run", "preview"]
+CMD [ "serve", "-s", "dist" ]

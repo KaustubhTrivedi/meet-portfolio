@@ -11,7 +11,7 @@ export default defineConfig({
     },
   },
   server: {
-    host: "94.72.105.76",
-    port: 4173,
+    host: "127.0.0.1",
+    port: 5173,
   },
 });

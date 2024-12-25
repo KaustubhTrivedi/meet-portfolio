@@ -6,6 +6,7 @@ function App() {
     <>
       <div className="">
         <Hero />
+        Testing Deployment...
       </div>
     </>
   );

@@ -57,6 +57,15 @@ export default {
 			fontFamily: {
 				poppins: ['Poppins', 'sans-serif'],
 			},
+			keyframes: {
+				breath: {
+					'0%, 100%': { transform: 'scale(0.8)', opacity: '0.4' },
+					'50%': { transform: 'scale(1)', opacity: '0.8' },
+				}
+			},
+			animation: {
+				breath: 'breath 4s ease-in-out infinite'
+			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

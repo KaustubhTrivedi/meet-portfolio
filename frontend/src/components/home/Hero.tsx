@@ -24,12 +24,36 @@ const Hero = () => {
     },
   };
 
+  const sentence = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        staggerChildren: 0.05,
+      },
+    },
+  };
+
+  const letter = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 200,
+      },
+    },
+  };
+
   return (
     <motion.div
       variants={container}
       initial="hidden"
       animate="show"
-      className="text-white text-center py-12 sm:py-16 md:py-24 lg:py-32 space-y-20"
+      className="text-white text-center py-12 sm:py-16 md:py-24 lg:py-12 "
     >
       <div>
         <motion.h1
@@ -51,11 +75,26 @@ const Hero = () => {
         tracking-wide bg-gradient-to-r from-white to-gray-400 
         bg-clip-text text-transparent"
         >
-          Welcome to my websit
+          Welcome to my website
         </motion.h1>
       </div>
-      <motion.p className="font-poppins font-medium text-2xl text-[#CFEF00]">
-        Elevating User Experience, one Design at a time.
+      <motion.p
+        variants={sentence}
+        initial="hidden"
+        animate="visible"
+        className="font-poppins mt-[50px] font-medium text-2xl text-[#CFEF00]"
+      >
+        {Array.from("Elevating User Experience, one Design at a time.").map(
+          (char, index) => (
+            <motion.span
+              key={index}
+              variants={letter}
+              whileHover={{ scale: 1.2, color: "#e2ff4d" }}
+            >
+              {char}
+            </motion.span>
+          )
+        )}
       </motion.p>
     </motion.div>
   );

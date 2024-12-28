@@ -1,8 +1,10 @@
+import { Link } from "react-router";
 import { Button } from "../ui/button";
 
 const WhoAmI = () => {
   return (
     <div className="space-y-20">
+      <h2 className="text-3xl text-[#CFEF00]">Who am I?</h2>
       <div className="text-2xl font-medium">
         <p>User experience designer based in Dublin, Ireland</p>
         <p>I make creative & user-friendly designs that are pretty amazing</p>
@@ -16,7 +18,7 @@ const WhoAmI = () => {
           />
         </div>
         <Button className="rounded-full bg-[#CFEF00] hover:bg-[#b9d600] font-medium hover:shadow-2xl text-black">
-          Know more about me
+          <Link to={"/about"}>Know more about me</Link>
         </Button>
       </div>
     </div>

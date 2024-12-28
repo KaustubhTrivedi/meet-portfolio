@@ -10,16 +10,26 @@ COPY package*.json ./
 # Step 4: Install the dependencies
 RUN npm install
 
-RUN npm i -g serve
-
 # Step 5: Copy the entire application code to the container
 COPY . .
 
 # Step 6: Build the Vite app for production
 RUN npm run build
 
-# Step 7: Expose the port where the app will be served
+# Step 7: Create a smaller final image with only the build artifacts
+FROM node:20-slim
+
+# Step 8: Set the working directory for the application
+WORKDIR /app
+
+# Step 9: Install serve globally (only in the final image)
+RUN npm install -g serve
+
+# Step 10: Copy the production build from the build stage
+COPY --from=build /app/dist /app/dist
+
+# Step 11: Expose the port where the app will be served
 EXPOSE 3000
 
-# Step 8: Run the Vite dev server in production mode (optional, can be swapped with another server)
-CMD [ "serve", "-s", "dist" ]
+# Step 12: Run the app using serve
+CMD ["serve", "-s", "dist"]

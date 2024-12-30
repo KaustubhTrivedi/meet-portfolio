@@ -1,14 +1,22 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "../ui/button";
+import { Link } from "react-router";
+import ark_logo from "@/assets/cardImages/ark_logo.png";
+import ark_card_image from "@/assets/cardImages/ark_card_image.png";
+import aiducate_logo from "@/assets/cardImages/aiducate_logo.png";
+import aiducate_main_image from "@/assets/cardImages/aiducate_main_image.png";
+import unicare_logo from "@/assets/cardImages/unicare_logo.png";
+import unicare_main_image from "@/assets/cardImages/unicare_main_image.png";
 
 interface Card {
   id: number;
-  title: string;
+  logoIcon: string;
   tag: string;
+  title: string;
   description: string;
   cta_link: string;
-  icon: string | null;
+  main_image: string;
 }
 
 const CardCarousel = () => {
@@ -16,19 +24,22 @@ const CardCarousel = () => {
   const [cards] = useState<Card[]>([
     {
       id: 1,
-      title: "UX Design System",
-      tag: "UI/UX",
-      description: "A comprehensive design system for enterprise applications",
+      title: "ADAPT ARK",
+      tag: "UI/UX Design",
+      description: "Risk assessment platform for hospitals",
       cta_link: "/projects/design-system",
-      icon: null,
+      logoIcon: ark_logo,
+      main_image: ark_card_image,
     },
     {
       id: 2,
-      title: "Mobile App Interface",
-      tag: "Interface Design",
-      description: "Modern mobile app interface with focus on accessibility",
+      title: "Aid-ucate",
+      tag: "UI/UX Design",
+      description:
+        "A Web-Based Platform Connecting Providers to Communities in Need",
       cta_link: "/projects/mobile-app",
-      icon: null,
+      logoIcon: aiducate_logo,
+      main_image: aiducate_main_image,
     },
     {
       id: 3,
@@ -36,7 +47,8 @@ const CardCarousel = () => {
       tag: "Product design",
       description: "End-to-end e-commerce platform design",
       cta_link: "/projects/ecommerce",
-      icon: null,
+      logoIcon: unicare_logo,
+      main_image: unicare_main_image,
     },
   ]);
 
@@ -100,18 +112,22 @@ const CardCarousel = () => {
               <div className="flex space-x-6">
                 {/* Textual Information Section */}
                 <div className="w-1/2 space-y-4 text-left">
-                  <div>Icon here</div>
-                  <p className="text-sm">tag</p>
-                  <h3 className="font-medium text-3xl text-[#CFEF00]">Title</h3>
-                  <p className="font-poppins font-normal">description</p>
+                  <img src={card?.logoIcon} />
+                  <p className="text-sm">{card?.tag}</p>
+                  <h3 className="font-medium text-3xl text-[#CFEF00]">
+                    {card?.title}
+                  </h3>
+                  <p className="font-poppins font-normal">
+                    {card?.description}
+                  </p>
                   <Button className="rounded-full bg-[#CFEF00] text-black">
-                    View Case Study
+                    <Link to={card.cta_link}>View Case Study</Link>
                   </Button>
                 </div>
                 {/* Image Section */}
                 <div className="w-1/2">
                   <img
-                    src={"https://placehold.co/200x200"}
+                    src={card?.main_image}
                     alt={card.title}
                     className="rounded-lg w-full h-auto object-cover"
                   />

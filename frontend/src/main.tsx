@@ -9,7 +9,7 @@ import Projects from "./page/Projects.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <div className="bg-gradient-to-r from-black to-gray-700 min-h-screen text-white">
+    <div className="bg-gradient-to-r grad from-black to-[#003854] min-h-screen text-white">
       <BrowserRouter>
         <Navbar />
         <div className="container mx-auto px-4 py-8">

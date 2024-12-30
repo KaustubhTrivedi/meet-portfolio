@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { Button } from "../ui/button";
-
+import meet_profile from "@/assets/profilepic/meet_image.jpg";
 const WhoAmI = () => {
   return (
     <div className="space-y-20">
@@ -13,8 +13,8 @@ const WhoAmI = () => {
         <div className="relative">
           <div className="absolute inset-0 animate-breath rounded-full bg-[#CFEF00] blur-xl"></div>
           <img
-            src="https://placehold.co/200x200"
-            className="relative rounded-full mb-10"
+            src={meet_profile}
+            className="relative rounded-full mb-10 w-24 h-24 object-cover"
           />
         </div>
         <Button className="rounded-full bg-[#CFEF00] hover:bg-[#b9d600] font-medium hover:shadow-2xl text-black">
